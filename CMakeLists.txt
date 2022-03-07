@@ -10,3 +10,6 @@ add_subdirectory("GLTutorial")
 
 target_include_directories(GLTutorial PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/glfw/include)
 target_include_directories(GLTutorial PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/glad/include)
+
+# compiler options
+add_compile_options(-Wall -Wextra -pedantic -Werror)
