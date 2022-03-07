@@ -58,7 +58,7 @@ int main() {
         return -1;
     }
 
-    // Build and complile shader programs
+    // Build and compile shader programs
 
     // Vertex shader
     unsigned int vertexShader = glCreateShader(GL_VERTEX_SHADER);
@@ -102,11 +102,29 @@ int main() {
     glDeleteShader(fragmentShader);
 
     // set up vertex data, buffers, and configure vertex attributes
+//    float vertices[] = {
+//            -0.5f, -0.5f, 0.0f, // left
+//            0.5f, -0.5f, 0.0f, // right
+//            0.0f, 0.5f, 0.0f  // top
+//    };
+
     float vertices[] = {
-            -0.5f, -0.5f, 0.0f, // left
-            0.5f, -0.5f, 0.0f, // right
-            0.0f, 0.5f, 0.0f  // top
+            0.5f, 0.5f, 0.0f, // top right
+            0.5f, -0.5f, 0.0f, // bottom right
+            -0.5f, -0.5f, 0.0f, // bottom left
+            -0.5f, 0.5f, 0.0f, // top left
     };
+
+    // order to draw the triangles using Element Buffer Objects (EBO)
+    unsigned int indices[] = {
+            0, 1, 3, // triangle 1
+            1, 2, 3 // triangle 2
+    };
+
+
+    // bind our EBO
+    unsigned int EBO;
+    glGenBuffers(1, &EBO);
 
     unsigned int VBO, VAO;
     glGenVertexArrays(1, &VAO);
@@ -119,7 +137,10 @@ int main() {
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
     glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
 
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*) 0);
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
+
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), nullptr);
     glEnableVertexAttribArray(0);
 
     glBindBuffer(GL_ARRAY_BUFFER, 0);
@@ -137,7 +158,10 @@ int main() {
         // draw our first triangle
         glUseProgram(shaderProgram);
         glBindVertexArray(VAO);
-        glDrawArrays(GL_TRIANGLES, 0, 3);
+//        glDrawArrays(GL_TRIANGLES, 0, 3);
+        glUseProgram(shaderProgram);
+        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, nullptr);
+        glBindVertexArray(0);
 
         // Check and call events and swap the buffers
         glfwSwapBuffers(window);
@@ -147,6 +171,7 @@ int main() {
     // de-allocate all resources once they've outlived their purpose
     glDeleteVertexArrays(1, &VAO);
     glDeleteBuffers(1, &VBO);
+    glDeleteBuffers(1, &EBO);
     glDeleteProgram(shaderProgram);
 
     glfwTerminate();
