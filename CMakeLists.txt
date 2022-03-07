@@ -1,0 +1,12 @@
+cmake_minimum_required(VERSION 3.21)
+project(OpenGLTutorial)
+
+set(CMAKE_CXX_STANDARD 14)
+
+# Include sub-projects
+add_subdirectory("glfw")
+add_subdirectory("glad")
+add_subdirectory("GLTutorial")
+
+target_include_directories(GLTutorial PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/glfw/include)
+target_include_directories(GLTutorial PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/glad/include)

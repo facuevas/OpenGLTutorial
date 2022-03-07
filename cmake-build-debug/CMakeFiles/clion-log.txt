@@ -1,0 +1,6 @@
+"/Users/francisangelocuevas/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=/Users/francisangelocuevas/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/CLion.app/Contents/bin/ninja/mac/ninja" -G Ninja /Users/francisangelocuevas/Dev/OpenGLTutorial
+-- Could NOT find Doxygen (missing: DOXYGEN_EXECUTABLE) 
+-- Including Cocoa support
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /Users/francisangelocuevas/Dev/OpenGLTutorial/cmake-build-debug
