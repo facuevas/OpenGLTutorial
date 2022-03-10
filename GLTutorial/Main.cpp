@@ -7,7 +7,6 @@
 #include "Shader/include/Shader.h"
 
 #include <iostream>
-#include <cmath>
 
 // Function prototypes
 void framebuffer_size_callback(GLFWwindow *window, int width, int height);
@@ -69,7 +68,7 @@ int main() {
     glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
 
     // position attributes
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*) 0);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), nullptr);
     glEnableVertexAttribArray(0);
 
     // color attributes
