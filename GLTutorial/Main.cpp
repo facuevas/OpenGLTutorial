@@ -47,7 +47,7 @@ int main() {
     /*
      * TODO: Use std::filesystem to use the relative path instead of the absolute path.
      * */
-    const char *vertexPath = "/Users/francisangelocuevas/Dev/OpenGLTutorial/GLTutorial/shaders/vertex.shader";
+    const char *vertexPath = "/Users/francisangelocuevas/Dev/OpenGLTutorial/GLTutorial/shaders/upsidedown_triangle_vertex.shader";
     const char *fragmentPath = "/Users/francisangelocuevas/Dev/OpenGLTutorial/GLTutorial/shaders/fragment.shader";
 
     // Build and compile the shader program
