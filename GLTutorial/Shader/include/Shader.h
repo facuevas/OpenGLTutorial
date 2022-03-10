@@ -8,16 +8,31 @@
 #include "glad/glad.h"
 
 #include <iostream>
+#include <fstream>
+#include <sstream>
+#include <string>
 
-class Shader {
-public:
-    unsigned int ID;
+namespace MyShader {
+    class Shader {
+    public:
+        // Member variables
+        unsigned int ID{};
 
-    Shader();
+        // Constructor
+        Shader(const char *vertexPath, const char *fragmentPath);
 
-    // Constructor generates the shader on the fly.
-    Shader(const char* vertexPath, const char* fragmentPath);
-};
+        // Function to use/activate the shader
+        void use();
 
+        // Utility uniform functions
+        void setBool(const std::string &name, bool value) const;
 
-#endif //OPENGLTUTORIAL_SHADER_H
+        void setInt(const std::string &name, int value) const;
+
+        void setFloat(const std::string &name, float value) const;
+    private:
+        static void checkCompileErrors(unsigned int shader, const std::string& type);
+    };
+}
+
+#endif
