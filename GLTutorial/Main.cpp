@@ -44,6 +44,9 @@ int main() {
         return -1;
     }
 
+    /*
+     * TODO: Use std::filesystem to use the relative path instead of the absolute path.
+     * */
     const char *vertexPath = "/Users/francisangelocuevas/Dev/OpenGLTutorial/GLTutorial/shaders/vertex.shader";
     const char *fragmentPath = "/Users/francisangelocuevas/Dev/OpenGLTutorial/GLTutorial/shaders/fragment.shader";
 
@@ -53,9 +56,9 @@ int main() {
     // Set up vertex data, buffers, and attributes
     float vertices[] = {
             // positions         // colors
-            0.5f, -0.5f, 0.0f,  1.0f, 0.0f, 0.0f,  // bottom right
-            -0.5f, -0.5f, 0.0f,  0.0f, 1.0f, 0.0f,  // bottom left
-            0.0f,  0.5f, 0.0f,  0.0f, 0.0f, 1.0f   // top
+            0.5f, -0.5f, 0.0f, 1.0f, 0.0f, 0.0f,  // bottom right
+            -0.5f, -0.5f, 0.0f, 0.0f, 1.0f, 0.0f,  // bottom left
+            0.0f, 0.5f, 0.0f, 0.0f, 0.0f, 1.0f   // top
     };
 
     unsigned int VBO, VAO;
@@ -72,7 +75,7 @@ int main() {
     glEnableVertexAttribArray(0);
 
     // color attributes
-    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*) (3 * sizeof(float )));
+    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void *) (3 * sizeof(float)));
     glEnableVertexAttribArray(1);
 
     while (!glfwWindowShouldClose(window)) {
