@@ -10,10 +10,12 @@ add_subdirectory("glfw")
 add_subdirectory("glad")
 add_subdirectory("GLTutorial")
 add_subdirectory("GLTutorial/Shader")
+add_subdirectory("stb")
 
 target_include_directories(GLTutorial PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/glfw/include)
 target_include_directories(GLTutorial PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/glad/include)
 target_include_directories(GLTutorial PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/GLTutorial/Shader/include)
+target_include_directories(GLTutorial PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/stb/include)
 
 # compiler options
 add_compile_options(-Wall -Wextra -pedantic -Werror)
