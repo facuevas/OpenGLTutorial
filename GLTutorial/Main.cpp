@@ -10,6 +10,9 @@
 #include <iostream>
 #include <experimental/filesystem>
 
+// Namespaces
+namespace FP = std::experimental::filesystem;
+
 // Function prototypes
 void framebuffer_size_callback(GLFWwindow *window, int width, int height);
 
@@ -51,7 +54,6 @@ int main() {
      * */
     std::string vertexFilename = "4.1.texture.vertex.shader";
     std::string fragmentFilename = "4.1.texture.fragment.shader";
-    namespace FP = std::experimental::filesystem;
     FP::path vertexPath = FP::current_path().parent_path().parent_path().append("GLTutorial").append("shaders").append(vertexFilename);
     FP::path fragmentPath = FP::current_path().parent_path().parent_path().append("GLTutorial").append("shaders").append(fragmentFilename);
 
@@ -105,8 +107,10 @@ int main() {
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
     // load image, create texture and generate mipmaps
     int width, height, nrChannels;
-    char const *textureFilename = "D:\\OpenGLTutorial\\GLTutorial\\Assets\\container.jpg";
-    unsigned char *data = stbi_load(textureFilename, &width, &height, &nrChannels, 0);
+    char const *textureFilename = "container.jpg";
+    FP::path textureFolderPath = FP::current_path().parent_path().parent_path().append("GLTutorial").append("Assets");
+    auto textureFilePath = textureFolderPath.append(textureFilename);
+    unsigned char *data = stbi_load(textureFilePath.string().c_str(), &width, &height, &nrChannels, 0);
 
     if (data) {
         glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
