@@ -8,6 +8,7 @@
 #include "stb_image.h"
 
 #include <iostream>
+#include <experimental/filesystem>
 
 // Function prototypes
 void framebuffer_size_callback(GLFWwindow *window, int width, int height);
@@ -48,11 +49,14 @@ int main() {
     /*
      * TODO: Use std::filesystem to use the relative path instead of the absolute path.
      * */
-    const char *vertexPath = "/Users/francisangelocuevas/Dev/OpenGLTutorial/GLTutorial/shaders/4.1.texture.vertex.shader";
-    const char *fragmentPath = "/Users/francisangelocuevas/Dev/OpenGLTutorial/GLTutorial/shaders/4.1.texture.fragment.shader";
+    std::string vertexFilename = "4.1.texture.vertex.shader";
+    std::string fragmentFilename = "4.1.texture.fragment.shader";
+    namespace FP = std::experimental::filesystem;
+    FP::path vertexPath = FP::current_path().parent_path().parent_path().append("GLTutorial").append("shaders").append(vertexFilename);
+    FP::path fragmentPath = FP::current_path().parent_path().parent_path().append("GLTutorial").append("shaders").append(fragmentFilename);
 
     // Build and compile the shader program
-    MyShader::Shader ourShader(vertexPath, fragmentPath);
+    MyShader::Shader ourShader(vertexPath.string().c_str(), fragmentPath.string().c_str());
 
     float vertices[] = {
             // positions          // colors           // texture coords
@@ -101,7 +105,7 @@ int main() {
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
     // load image, create texture and generate mipmaps
     int width, height, nrChannels;
-    char const *textureFilename = "/Users/francisangelocuevas/Dev/OpenGLTutorial/GLTutorial/Assets/container.jpg";
+    char const *textureFilename = "D:\\OpenGLTutorial\\GLTutorial\\Assets\\container.jpg";
     unsigned char *data = stbi_load(textureFilename, &width, &height, &nrChannels, 0);
 
     if (data) {
