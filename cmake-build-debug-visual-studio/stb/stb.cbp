@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="stb"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="msvc8"/>
+		<Option virtualFolders="CMake Files\;CMake Files\glfw\;CMake Files\glfw\CMake\;CMake Files\glfw\src\;CMake Files\glad\;CMake Files\GLTutorial\;CMake Files\GLTutorial\Shader\;CMake Files\stb\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="D:/OpenGLTutorial/cmake-build-debug-visual-studio/stb"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f D:\OpenGLTutorial\cmake-build-debug-visual-studio\stb\Makefile VERBOSE=1 all"/>
+					<CompileFile command="nmake /NOLOGO /f D:\OpenGLTutorial\cmake-build-debug-visual-studio\stb\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f D:\OpenGLTutorial\cmake-build-debug-visual-studio\stb\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f D:\OpenGLTutorial\cmake-build-debug-visual-studio\stb\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="stb">
+				<Option output="D:/OpenGLTutorial/cmake-build-debug-visual-studio/stb/stb.lib" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/OpenGLTutorial/cmake-build-debug-visual-studio/stb"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="msvc8"/>
+				<Compiler>
+					<Add directory="D:/OpenGLTutorial/stb/include"/>
+					<Add directory="C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.31.31103\ATLMFC\include"/>
+					<Add directory="C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.31.31103\include"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\shared"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\winrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\cppwinrt"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f D:\OpenGLTutorial\cmake-build-debug-visual-studio\stb\Makefile VERBOSE=1 stb"/>
+					<CompileFile command="nmake /NOLOGO /f D:\OpenGLTutorial\cmake-build-debug-visual-studio\stb\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f D:\OpenGLTutorial\cmake-build-debug-visual-studio\stb\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f D:\OpenGLTutorial\cmake-build-debug-visual-studio\stb\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="stb/fast">
+				<Option output="D:/OpenGLTutorial/cmake-build-debug-visual-studio/stb/stb.lib" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/OpenGLTutorial/cmake-build-debug-visual-studio/stb"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="msvc8"/>
+				<Compiler>
+					<Add directory="D:/OpenGLTutorial/stb/include"/>
+					<Add directory="C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.31.31103\ATLMFC\include"/>
+					<Add directory="C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.31.31103\include"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\shared"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\winrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\cppwinrt"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f D:\OpenGLTutorial\cmake-build-debug-visual-studio\stb\Makefile VERBOSE=1 stb/fast"/>
+					<CompileFile command="nmake /NOLOGO /f D:\OpenGLTutorial\cmake-build-debug-visual-studio\stb\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f D:\OpenGLTutorial\cmake-build-debug-visual-studio\stb\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f D:\OpenGLTutorial\cmake-build-debug-visual-studio\stb\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="D:/OpenGLTutorial/stb/include/stb_image.h">
+			<Option target="stb"/>
+		</Unit>
+		<Unit filename="D:/OpenGLTutorial/stb/src/stb_image.cpp">
+			<Option target="stb"/>
+		</Unit>
+		<Unit filename="D:/OpenGLTutorial/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="D:/OpenGLTutorial/glfw/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\glfw\"/>
+		</Unit>
+		<Unit filename="D:/OpenGLTutorial/glfw/CMake/cmake_uninstall.cmake.in">
+			<Option virtualFolder="CMake Files\glfw\CMake\"/>
+		</Unit>
+		<Unit filename="D:/OpenGLTutorial/glfw/CMake/glfw3.pc.in">
+			<Option virtualFolder="CMake Files\glfw\CMake\"/>
+		</Unit>
+		<Unit filename="D:/OpenGLTutorial/glfw/CMake/glfw3Config.cmake.in">
+			<Option virtualFolder="CMake Files\glfw\CMake\"/>
+		</Unit>
+		<Unit filename="D:/OpenGLTutorial/glfw/src/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\glfw\src\"/>
+		</Unit>
+		<Unit filename="D:/OpenGLTutorial/glad/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\glad\"/>
+		</Unit>
+		<Unit filename="D:/OpenGLTutorial/GLTutorial/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\GLTutorial\"/>
+		</Unit>
+		<Unit filename="D:/OpenGLTutorial/GLTutorial/Shader/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\GLTutorial\Shader\"/>
+		</Unit>
+		<Unit filename="D:/OpenGLTutorial/stb/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\stb\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

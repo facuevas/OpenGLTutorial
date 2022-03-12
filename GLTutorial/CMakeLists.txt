@@ -8,6 +8,11 @@ add_executable(GLTutorial "Main.cpp")
 target_link_libraries(GLTutorial glfw glad Shader stb)
 
 # If we are using windows, Filesystem requires stdc++fs
-if()
+if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
     target_link_libraries(GLTutorial stdc++fs)
-endif()
+endif(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+
+# If on Windows and using MSVC, we need to use a preprocessor directive to suppress the deprecation warning.
+if (MSVC)
+    add_compile_definitions(_SILENCE_EXPERIMENTAL_FILESYSTEM_DEPRECATION_WARNING)
+endif(MSVC)
