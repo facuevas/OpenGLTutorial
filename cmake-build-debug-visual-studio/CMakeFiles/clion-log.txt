@@ -1,6 +1,0 @@
-C:\Users\Angelo\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\cmake\win\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - NMake Makefiles" D:\OpenGLTutorial
--- Could NOT find Doxygen (missing: DOXYGEN_EXECUTABLE) 
--- Including Win32 support
--- Configuring done
--- Generating done
--- Build files have been written to: D:/OpenGLTutorial/cmake-build-debug-visual-studio
