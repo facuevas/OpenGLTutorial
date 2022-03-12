@@ -5,4 +5,9 @@ cmake_minimum_required(VERSION 3.21)
 # Add source to this project's exectuable.
 add_executable(GLTutorial "Main.cpp")
 
-target_link_libraries(GLTutorial glfw glad Shader stb stdc++fs)
+target_link_libraries(GLTutorial glfw glad Shader stb)
+
+# If we are using windows, Filesystem requires stdc++fs
+if()
+    target_link_libraries(GLTutorial stdc++fs)
+endif()
