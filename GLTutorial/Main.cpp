@@ -11,7 +11,7 @@
 #include <experimental/filesystem>
 
 // Namespaces
-namespace FP = std::experimental::filesystem;
+namespace FP = std::filesystem;
 
 // Function prototypes
 void framebuffer_size_callback(GLFWwindow *window, int width, int height);
