@@ -52,15 +52,14 @@ int main() {
      * TODO: Use std::filesystem to use the relative path instead of the absolute path.
      * */
     std::string vertexFilename = "4.1.texture.vertex.shader";
-    std::string fragmentFilename = "4.1.texture.fragment.shader";
-    fs::path vertexPath = fs::current_path().parent_path().parent_path().append("GLTutorial").append("shaders").append(
-            vertexFilename);
-    fs::path fragmentPath = fs::current_path().parent_path().parent_path().append("GLTutorial").append(
-            "shaders").append(fragmentFilename);
-    fs::path textureFolderPath = fs::current_path().parent_path().parent_path().append("GLTutorial").append("Assets");
+    fs::path vertexPath = fs::current_path().parent_path().append("shaders").append(vertexFilename);
 
-    fs::path rootPath = fs::current_path().relative_path();
-    std::cout << "TESTING FILESYSTEM " << rootPath.parent_path().string() << std::endl;
+    std::string fragmentFilename = "4.1.texture.fragment.shader";
+    fs::path fragmentPath = fs::current_path().parent_path().append("shaders").append(fragmentFilename);
+
+    fs::path textureFolderPath = fs::current_path().parent_path().append("Assets");
+
+    std::cout << "TESTING FILESYSTEM " << vertexPath << std::endl;
 
     MyShader::Shader ourShader(vertexPath.string().c_str(), fragmentPath.string().c_str());
 
@@ -130,7 +129,8 @@ int main() {
     unsigned int texture2;
     glGenTextures(1, &texture2);
     glBindTexture(GL_TEXTURE_2D, texture2);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);	// set texture wrapping to GL_REPEAT (default wrapping method)
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S,
+                    GL_REPEAT);    // set texture wrapping to GL_REPEAT (default wrapping method)
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);

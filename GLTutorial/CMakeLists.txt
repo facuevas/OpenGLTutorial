@@ -16,3 +16,9 @@ endif(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
 if (MSVC)
     add_compile_definitions(_SILENCE_EXPERIMENTAL_FILESYSTEM_DEPRECATION_WARNING)
 endif(MSVC)
+
+# Copy shaders folder to binary files.
+file(COPY shaders DESTINATION ${CMAKE_BINARY_DIR})
+
+# Copy assets folder to binary files.
+file(COPY Assets DESTINATION ${CMAKE_BINARY_DIR})
