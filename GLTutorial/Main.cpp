@@ -59,8 +59,6 @@ int main() {
 
     fs::path textureFolderPath = fs::current_path().parent_path().append("Assets");
 
-    std::cout << "TESTING FILESYSTEM " << vertexPath << std::endl;
-
     MyShader::Shader ourShader(vertexPath.string().c_str(), fragmentPath.string().c_str());
 
     float vertices[] = {
