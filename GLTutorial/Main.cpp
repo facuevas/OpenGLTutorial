@@ -10,7 +10,7 @@
 #include <filesystem>
 
 // Namespaces
-namespace FP = std::filesystem;
+namespace fs = std::filesystem;
 
 // Function prototypes
 void framebuffer_size_callback(GLFWwindow *window, int width, int height);
@@ -53,11 +53,14 @@ int main() {
      * */
     std::string vertexFilename = "4.1.texture.vertex.shader";
     std::string fragmentFilename = "4.1.texture.fragment.shader";
-    FP::path vertexPath = FP::current_path().parent_path().parent_path().append("GLTutorial").append("shaders").append(
+    fs::path vertexPath = fs::current_path().parent_path().parent_path().append("GLTutorial").append("shaders").append(
             vertexFilename);
-    FP::path fragmentPath = FP::current_path().parent_path().parent_path().append("GLTutorial").append(
+    fs::path fragmentPath = fs::current_path().parent_path().parent_path().append("GLTutorial").append(
             "shaders").append(fragmentFilename);
-    FP::path textureFolderPath = FP::current_path().parent_path().parent_path().append("GLTutorial").append("Assets");
+    fs::path textureFolderPath = fs::current_path().parent_path().parent_path().append("GLTutorial").append("Assets");
+
+    fs::path rootPath = fs::current_path().relative_path();
+    std::cout << "TESTING FILESYSTEM " << rootPath.parent_path().string() << std::endl;
 
     MyShader::Shader ourShader(vertexPath.string().c_str(), fragmentPath.string().c_str());
 
